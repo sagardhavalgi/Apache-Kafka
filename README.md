@@ -72,11 +72,3 @@ For coordination and synchronization with other services, Kafka collaborates wit
 Apache Spark is well supported by Kafka<br>
 <h6>
 
-<h3>Kafka Commands:<h3>
-<h6>
-Open your terminal and navigate to the directory where you extracted the Kafka zip or tar file:<br>
-$ cd kafka_2.13-3.1.0
-
-Run the following command to launch the ZooKeeper service:
-
-<h6>
