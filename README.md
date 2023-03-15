@@ -70,5 +70,9 @@ Kafka provides a queue that can handle large amounts of data and move messages f
 Kafka can also save the messages to storage and replicate them across the cluster.<br>
 For coordination and synchronization with other services, Kafka collaborates with Zookeeper.<br>
 Apache Spark is well supported by Kafka<br>
+<h6><br>
+<h3>Online Documentation<h3>
 <h6>
-
+You can find the latest Spark documentation, including a programming guide, on the project web page. This README file only contains basic explanation.<br>
+https://kafka.apache.org/
+</h6>
