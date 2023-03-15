@@ -1,0 +1,38 @@
+#__________________________________APACHE KAFKA QUICKSTART COMMANDS________________________________________________________________________________________________
+
+# STEP 1: GET KAFKA
+ tar -xzf kafka_2.13-3.4.0.tgz
+ cd kafka_2.13-3.4.0
+
+# START THE KAFKA ENVIRONMENT
+# NOTE: Your local environment must have Java 8+ installed.
+# Apache Kafka can be started using ZooKeeper
+# Kafka with ZooKeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# Open another terminal session and run
+bin/kafka-server-start.sh config/server.properties
+
+# Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+
+# Kafka is a distributed event streaming platform that lets you read, write, store, and process events across many machines.
+# So before you can write your first events, you must create a topic. Open another terminal session and run:
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 1       ReplicationFactor: 1	Configs:
+Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
+
+# WRITE SOME EVENTS INTO THE TOPIC
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+This is my first event
+This is my second event
+# You can stop the producer client with Ctrl-C at any time.
+
+# Open another terminal session and run the console consumer client to read the events you just created:
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+This is my first event
+This is my second event
+
+# TERMINATE THE KAFKA ENVIRONMENT
+rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
