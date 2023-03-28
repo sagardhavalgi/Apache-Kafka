@@ -76,3 +76,4 @@ Apache Spark is well supported by Kafka<br>
 You can find the latest Spark documentation, including a programming guide, on the project web page. This README file only contains basic explanation.<br>
 https://kafka.apache.org/
 </h6>
+
